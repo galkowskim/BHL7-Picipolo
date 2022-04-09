@@ -3,9 +3,9 @@ import csv
 from dataclasses import fields
 from .scraper import Location
 
-geolocator = Nominatim(user_agent="Your_Name")
+geolocator = Nominatim(user_agent="")
 
-with open('data.csv', 'r') as f1, open('dataWithAddress.csv', 'w') as f2:
+with open('data.csv', 'r') as f1, open('dataWithAddress.csv', 'w', newline = '') as f2:
     
     line = f1.readline()
     line = f1.readline()
@@ -19,17 +19,17 @@ with open('data.csv', 'r') as f1, open('dataWithAddress.csv', 'w') as f2:
     
     count = 0
     
-    while count != 2:
-        if line is not None:
-            count = 0
-            elementy = line.split(',')
+    while line:
+        print(count)
+        count += 1
+        elementy = line.split(',')
         array = line.split(',')
         text = array[1] + ', ' + array[2]
-        print(text)
         text = geolocator.reverse(text).address
-        w.writerow([el for el in elementy] + [text])
+        text = text.split(', ')
+        text = text[1] + ' ' + text[0]
+        w.writerow([el.strip() for el in elementy] + [text])
         line = f1.readline()
-        count += 1
         
     
 

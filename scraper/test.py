@@ -1,11 +1,5 @@
-napis = "Queens,40.732731,-73.888603,844000.0"
+from geopy.geocoders import Nominatim
 
+geolocator = Nominatim(user_agent="Your_Name")
 
-import re
-
-pattern = '\d+\.\d*,-\d+\.\d*'
-
-prog = re.compile(pattern)
-result = prog.match(napis)
-
-print(result)
+print(geolocator.geocode('360 3rd Ave, Brooklyn, NY').latitude)
