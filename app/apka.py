@@ -1,41 +1,35 @@
 import streamlit as st
 from streamlit_folium import folium_static
 import folium
-from folium.plugins import MousePosition
-import jinja2
+from folium.plugins import MarkerCluster
+import pandas as pd
 
+from pathlib import Path
 
-"# streamlit-folium"
+datapath = Path(__file__).parents[1].joinpath('data', 'data.csv')
+df = pd.read_csv(datapath)
 
-with st.echo():
-    import streamlit as st
-    from streamlit_folium import folium_static
-    import folium
+col_dict = {
+    'Brooklyn': 'red',
+    'Manhattan': 'blue',
+    'Bronx': 'green',
+    'Queens': 'purple',
+    'Staten Island': 'orange'
+}
 
-    # center on Liberty Bell
-    m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
+st.title('Map of NYC')
+# st.write(df.head())
 
-    # add marker for Liberty Bell
-    tooltip = "Liberty Bell"
-    folium.Marker(
-        [39.949610, -75.150282], popup="Liberty Bell", tooltip=tooltip
-    ).add_to(m)
-    
-    formatter = "function(num) {return L.Util.formatNum(num, 3) + ' º ';};"
+map1 = folium.Map(
+    location=[40.687759, -73.994781],
+    zoom_start=12,
+)
+mCluster = MarkerCluster(name='example').add_to(map1)
 
-    MousePosition(
-        position="topright",
-        separator=" | ",
-        empty_string="NaN",
-        lng_first=True,
-        num_digits=20,
-        prefix="Coordinates:",
-        lat_formatter=formatter,
-        lng_formatter=formatter,
-    ).add_to(m)
-    
-    # call to render Folium map in Streamlit
-    folium_static(m)
-    
-print(m)
-print(MousePosition.lat_formatter)
+df.apply(lambda row:folium.Marker(location=[row["latitude"], row["longitude"]],
+                                  icon=folium.Icon(color=col_dict[row['location']]),
+                                  popup=row['location'] + '\n' + str(int(row['price'])) + '$').add_to(mCluster), axis=1)
+
+folium_static(map1)
+
+# map1.save('output.html')
