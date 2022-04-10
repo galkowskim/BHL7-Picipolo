@@ -9,7 +9,7 @@
 
 ## Problem
 
-New York City as a centre of one of the most populated aglomerations worldwide poses a great case study of large metropolies functionins. Data about real estate prices and details in NYC in 2021 can let us deepen our understanding of the process of forming property prices in huge, overcrowded cities. Analyze the dataset you are provided with and find the use in real world of the knowledge you gained during this process.
+New York City as a centre of one of the most populated aglomerations worldwide poses a great case study of large metropolies functioning. Data about real estate prices and details in NYC in 2021 can let us deepen our understanding of the process of forming property prices in huge, overcrowded cities. Analyze the dataset you are provided with and find the use in real world of the knowledge you gained during this process.
 
 ## Solution and implementation
 
