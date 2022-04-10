@@ -17,4 +17,4 @@ Web Application displaying prices of real estates in near location and predictin
 
 - Optimized Machine Learning model called Random Forest Regressor which predicted the price of property based on severl features like longitude, latitude, metrage using Sci-kit Learn Python library
 - Constructed Web Scrapper in Python using Beautiful Soup and Request packages in order to retrieve more data about housing market prices in NYC Technopolis from housing market sites (Zillow.com, Trulia.com)
-- Build Web App prototype in Streamlit, displaying the map with real estate prices in NYC
+- Built Web App prototype in Streamlit, displaying the map with real estate prices in NYC
