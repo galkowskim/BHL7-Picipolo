@@ -13,7 +13,7 @@ New York City as a centre of one of the most populated aglomerations worldwide p
 
 ## Solution and implementation
 
-Web Application displaying prices of real estates in near location and predicting whether they are over-priced, realiable or under-priced.
+Web Application displaying prices of real estates in near location and predicting whether they are over-priced, realiable or under-priced. Application targets broad customer group as it could be used both by real estate buyers seeking reliable information about housing prices in certain location as well as real estate agents wanitng to confront their price with the one optimized by Artificial Intelligence models.
 
 - Optimized Machine Learning model called Random Forest Regressor which predicted the price of property based on severl features like longitude, latitude, metrage using Sci-kit Learn Python library
 - Constructed Web Scrapper in Python using Beautiful Soup and Request packages in order to retrieve more data about housing market prices in NYC Technopolis from housing market sites (Zillow.com, Trulia.com)
