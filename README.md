@@ -11,7 +11,7 @@
 
 New York City as a centre of one of the most populated aglomerations worldwide poses a great case study of large metropolies functionins. Data about real estate prices and details in NYC in 2021 can let us deepen our understanding of the process of forming property prices in huge, overcrowded cities. Analyze the dataset you are provided with and find the use in real world of the knowledge you gained during this process.
 
-## Solution and implementation:
+## Solution and implementation
 
 Web Application displaying prices of real estates in near location and predicting whether they are over-priced, realiable or under-priced.
 
