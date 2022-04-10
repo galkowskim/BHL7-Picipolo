@@ -1,6 +1,6 @@
 # Repository for Best Hacking League 7 challenge in Artificial Intelligence
 
-## Authors: 
+## Authors
 
 - Wiktor Jakubowski
 - Mikołaj Gałkowski
